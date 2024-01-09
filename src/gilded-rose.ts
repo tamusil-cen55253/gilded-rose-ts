@@ -1,21 +1,13 @@
 export class Item {
-    name: string
-    sellIn: number
-    quality: number
-
-    constructor(name, sellIn, quality) {
-        this.name = name
-        this.sellIn = sellIn
-        this.quality = quality
-    }
+    constructor(
+        public name: string,
+        public sellIn: number,
+        public quality: number
+    ) {}
 }
 
 export class GildedRose {
-    items: Array<Item>
-
-    constructor(items = [] as Array<Item>) {
-        this.items = items
-    }
+    constructor(public items: Item[] = []) {}
 
     updateQuality() {
         for (let i = 0; i < this.items.length; i++) {
