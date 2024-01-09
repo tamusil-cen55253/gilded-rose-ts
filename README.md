@@ -15,3 +15,9 @@ npm run ts ./src/gilded-rose-text-test.ts <days>
 ```
 
 `<days>` - number of days to pass; default = 2
+
+## Run Mocha tests
+
+```
+npm test
+```
