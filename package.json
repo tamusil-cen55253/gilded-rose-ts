@@ -1,0 +1,16 @@
+{
+    "name": "gilded-rose-kata",
+    "version": "1.0.0",
+    "description": "Gilded Rose kata in TypeScript",
+    "type": "module",
+    "license": "MIT",
+    "private": true,
+
+    "devDependencies": {
+        "esbuild": "0.19.11",
+        "@esbuild-kit/esm-loader": "2.6.5"
+    },
+    "scripts": {
+        "ts": "node --experimental-loader=@esbuild-kit/esm-loader"
+    }
+}

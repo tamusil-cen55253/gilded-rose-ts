@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "module": "NodeNext",
+        "moduleResolution": "NodeNext",
+        "target": "ESNext",
+        "strict": true,
+        "noImplicitAny": false,
+        "sourceMap": true,
+        "baseUrl": "./src",
+        "forceConsistentCasingInFileNames": true,
+        "resolveJsonModule": true,
+        "esModuleInterop": true,
+        "allowImportingTsExtensions": true,
+        "noEmit": true,
+    }
+}
