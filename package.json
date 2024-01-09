@@ -12,6 +12,7 @@
         "@esbuild-kit/esm-loader": "2.6.5",
 
         "chai": "5.0.0",
+        "@cucumber/cucumber": "10.2.1",
         "mocha": "10.2.0",
         "@types/chai": "4.3.11",
         "@types/mocha": "10.0.6",
@@ -19,7 +20,8 @@
     },
     "scripts": {
         "ts": "node --loader @esbuild-kit/esm-loader",
+        "test:cucumber": "cucumber-js --require-module esbuild-register --require ./test/steps/**/*.ts ./test/features/**/*.feature",
         "test:mocha": "mocha --require esbuild-register test/**/*-test.ts",
-        "test": "npm run test:mocha"
+        "test": "npm run test:mocha && npm run test:cucumber"
     }
 }

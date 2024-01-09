@@ -16,8 +16,21 @@ npm run ts ./src/gilded-rose-text-test.ts <days>
 
 `<days>` - number of days to pass; default = 2
 
-## Run Mocha tests
+## Run tests
 
+Run all tests
 ```
 npm test
+```
+
+Run Mocha tests separately
+
+```
+npm run test:mocha
+```
+
+Run Cucumber tests separately
+
+```
+npm run test:cucumber
 ```
