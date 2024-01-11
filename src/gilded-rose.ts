@@ -12,42 +12,40 @@ export class GildedRose {
     }
 
     updateQuality() {
-        this.items.forEach((item) => {
-            let adjustment: number = 0;
-            if (item.name == 'Aged Brie') {
-                adjustment = 1;
-            } else if(item.name == 'Backstage passes to a TAFKAL80ETC concert') {
-                if (item.sellIn <= 5) {
-                    adjustment = 3;
-                } else if (item.sellIn <= 10) {
-                    adjustment = 2;
-                } else {
+        this.items
+            .filter((item) => item.name !== 'Sulfuras, Hand of Ragnaros')
+            .forEach((item) => {
+                let adjustment: number = 0;
+                if (item.name == 'Aged Brie') {
                     adjustment = 1;
-                }
-            } else {
-               adjustment = -1;
-            }
-
-            // Půlnoc!!!
-            if (item.name != 'Sulfuras, Hand of Ragnaros') {
-                this.adjustQuality(item, adjustment);
-                item.sellIn--;
-            }
-
-            if (item.sellIn < 0) {
-                if (item.name != 'Aged Brie') {
-                    if (item.name != 'Backstage passes to a TAFKAL80ETC concert') {
-                        if (item.name != 'Sulfuras, Hand of Ragnaros') {
-                            this.adjustQuality(item, -1);
-                        }
+                } else if (item.name == 'Backstage passes to a TAFKAL80ETC concert') {
+                    if (item.sellIn <= 5) {
+                        adjustment = 3;
+                    } else if (item.sellIn <= 10) {
+                        adjustment = 2;
                     } else {
-                        item.quality = 0;
+                        adjustment = 1;
                     }
                 } else {
-                    this.adjustQuality(item, 1);
+                    adjustment = -1;
                 }
-            }
-        })
+
+                // Půlnoc!!!
+                this.adjustQuality(item, adjustment);
+                item.sellIn--;
+
+                if (item.sellIn < 0) {
+                    if (item.name != 'Aged Brie') {
+                        if (item.name != 'Backstage passes to a TAFKAL80ETC concert') {
+                            this.adjustQuality(item, -1);
+                        } else {
+                            item.quality = 0;
+                        }
+                    } else {
+                        this.adjustQuality(item, 1);
+                    }
+                }
+            })
     }
 
     private adjustQuality(item: Item, adjustment: number) {
