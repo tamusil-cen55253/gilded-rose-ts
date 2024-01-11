@@ -29,20 +29,11 @@ export class GildedRose {
                         adjustment = 1;
                     }
                 } else {
-                    adjustment = -1;
+                    adjustment = item.sellIn <= 0 ? -2 : -1;
                 }
 
-                // Půlnoc!!!
                 this.adjustQuality(item, adjustment);
                 item.sellIn--;
-
-                if (item.sellIn < 0) {
-                    if (item.name == 'Aged Brie') {}
-                    else if (item.name == 'Backstage passes to a TAFKAL80ETC concert') {
-                    } else {
-                        this.adjustQuality(item, -1);
-                    }
-                }
             })
     }
 
