@@ -8,3 +8,4 @@ Feature: Sulfuras quality
       | item                       | sell-by | quality |
       | Sulfuras, Hand of Ragnaros | 1       | 10      |
       | Sulfuras, Hand of Ragnaros | 5       | 25      |
+      | Sulfuras, Hand of Ragnaros | 5       | 80      |

@@ -24,12 +24,13 @@ export class GildedRose {
                 } else {
                     adjustment = 1;
                 }
-            } else if (item.name != 'Sulfuras, Hand of Ragnaros') {
+            } else {
                adjustment = -1;
             }
-            this.adjustQuality(item, adjustment);
+
             // Půlnoc!!!
             if (item.name != 'Sulfuras, Hand of Ragnaros') {
+                this.adjustQuality(item, adjustment);
                 item.sellIn--;
             }
 
