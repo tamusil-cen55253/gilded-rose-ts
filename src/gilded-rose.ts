@@ -17,7 +17,7 @@ export class GildedRose {
             .forEach((item) => {
                 let adjustment: number = 0;
                 if (item.name == 'Aged Brie') {
-                    adjustment = 1;
+                    adjustment = item.sellIn <= 0 ? 2 : 1;
                 } else if (item.name == 'Backstage passes to a TAFKAL80ETC concert') {
                     if (item.sellIn <= 5) {
                         adjustment = 3;
@@ -35,9 +35,8 @@ export class GildedRose {
                 item.sellIn--;
 
                 if (item.sellIn < 0) {
-                    if (item.name == 'Aged Brie') {
-                        this.adjustQuality(item, 1);
-                    } else if (item.name == 'Backstage passes to a TAFKAL80ETC concert') {
+                    if (item.name == 'Aged Brie') {}
+                    else if (item.name == 'Backstage passes to a TAFKAL80ETC concert') {
                         item.quality = 0;
                     } else {
                         this.adjustQuality(item, -1);
