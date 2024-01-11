@@ -18,7 +18,7 @@ Feature: Conjured Item quality
     Examples:
       | item               | overdue | quality |
       | Conjured Mana Cake | 0       | 10      |
-      | Conjured Mana Cake | 1       | 3       |
+      | Conjured Mana Cake | 1       | 4       |
 
   Scenario Outline: never decreases below 0
     Given an <item> with quality <quality> <before-after> <sell-by> days
