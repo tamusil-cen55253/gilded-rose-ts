@@ -24,17 +24,21 @@ export class GildedRose {
     private getQualityAdjustment(item: Item) {
         switch (item.name) {
             case 'Aged Brie':
-                return item.sellIn <= 0 ? 2 : 1;
+                return -this.normalDegradation(item);
             case 'Backstage passes to a TAFKAL80ETC concert':
                 if (item.sellIn <= 0) return -item.quality;
                 if (item.sellIn <= 5) return 3;
                 if (item.sellIn <= 10) return 2;
                 return 1;
             case 'Conjured Mana Cake':
-                return item.sellIn <= 0 ? -4 : -2;
+                return 2 * this.normalDegradation(item);
             default:
-                return item.sellIn <= 0 ? -2 : -1;
+                return this.normalDegradation(item);
         }
+    }
+
+    private normalDegradation(item: Item) {
+        return item.sellIn <= 0 ? -2 : -1;
     }
 
     private adjustQuality(item: Item, adjustment: number) {
