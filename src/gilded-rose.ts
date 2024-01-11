@@ -49,11 +49,7 @@ export class GildedRose {
         })
     }
 
-    private adjustQuality(item: Item, adjustment: -1 | 1) {
-        if (item.quality < 50 && adjustment === 1) {
-            item.quality += adjustment;
-        } else if (item.quality > 0 && adjustment === -1) {
-            item.quality += adjustment;
-        }
+    private adjustQuality(item: Item, adjustment: number) {
+        item.quality = Math.max(0, Math.min(item.quality + adjustment, 50));
     }
 }
