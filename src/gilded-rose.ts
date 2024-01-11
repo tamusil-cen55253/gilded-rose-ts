@@ -14,9 +14,7 @@ export class GildedRose {
     updateQuality() {
         this.items.forEach((item) => {
             if (item.name == 'Aged Brie') {
-                if (item.quality < 50) {
-                    item.quality++;
-                }
+                this.adjustQuality(item, 1);
 
             } else if(item.name == 'Backstage passes to a TAFKAL80ETC concert') {
                 if (item.quality < 50) {
