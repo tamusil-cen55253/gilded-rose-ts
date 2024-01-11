@@ -40,3 +40,9 @@ Then(/^the quality should be (\d+)$/, (quality) => {
 Then(/^the sell-by should be decreased by (\d+)$/, (decrease) => {
     assert.equal(originalSellIn - parseInt(decrease), app.items[0].sellIn)
 })
+
+Then(/^the quality and sell-by should be unchaged$/, () => {
+    assert.equal(originalSellIn, app.items[0].sellIn)
+    assert.equal(originalQuality, app.items[0].quality)
+})
+
